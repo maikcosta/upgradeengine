@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,17 +15,18 @@
         <th>Versão</th>
     </tr>
     <tr>
-        <td>Java</td>
-        <td>"{$java}"</td>
+        <td align="center">Java</td>
+        <td align="center" th:text="${java}"></td>
     </tr>
     <tr>
-        <td>Spring-boot</td>
-        <td>"{$spring-boot}"</td>
+        <td align="center" >Spring-boot</td>
+        <td align="center" th:text="${spring}"></td>
     </tr>
     <tr>
-        <td>Spring-boot-parent</td>
-        <td>"{$parent}"</td>
+        <td align="center">Spring-boot-parent</td>
+        <td align="center" th:text="${parent}"></td>
     </tr>
 </table>
 </body>
 </html>
+

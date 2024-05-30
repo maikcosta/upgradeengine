@@ -5,6 +5,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.HashMap;
+import java.util.Map;
+
 @RestController
 @RequestMapping("/config")
 public class ConfigController {
@@ -19,16 +22,15 @@ public class ConfigController {
     private String parentVersion;
 
     @GetMapping
-    public String getConfig() {
-        StringBuilder config = new StringBuilder();
-
-        config.append("Versão do Java: <b>").append(javaVersion).append("</b><br>");
-        config.append("Versão do Spring Framework: <b>").append(springVersion).append("</b><br>");
-        config.append("Versão do Parent: <b>").append(parentVersion).append("</b><br>");
-
-        return config.toString();
+    public Map<String, String> getConfig() {
+        Map<String, String> config = new HashMap<>();
+        config.put("javaVersion", javaVersion);
+        config.put("springVersion", springVersion);
+        config.put("parentVersion", parentVersion);
+        return config;
     }
 }
+
 
 
 
